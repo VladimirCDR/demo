@@ -1,0 +1,35 @@
+version: '3'
+services:
+  backend-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: backend-server:latest
+    ports:
+      - 8080:8080
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - spring-cloud-network
+
+  mysql:
+    image: mysql:8.0.22
+    platform: linux/x86_64
+    container_name: mysqldb
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=test
+      - MYSQL_DATABASE=DATA
+    healthcheck:
+      test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
+      timeout: 15s
+      retries: 10
+    networks:
+      - spring-cloud-network
+
+networks:
+  spring-cloud-network:
+    driver: bridge
