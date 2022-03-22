@@ -1,0 +1,17 @@
+#spring:
+#  cloud:
+#    vault:
+#      uri: localhost:8200
+#      authentication: TOKEN
+#      token: s.gcGQkF8tBebDi3Qg0OL31dvj
+#      database:
+#        enabled: true
+#        role: demo_mysql_role
+#        backend: mysql
+#        username-property: spring.datasource.username
+#        password-property: spring.datasource.password
+#      fail-fast: true
+#      #  connects to local mysql server(a running docker image)
+#  datasource:
+#    url: jdbc:mysql://127.0.0.1:3306
+#    driver-class-name: com.mysql.cj.jdbc.Driver

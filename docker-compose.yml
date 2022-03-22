@@ -14,8 +14,8 @@ services:
       - spring-cloud-network
 
   mysql:
-    image: mysql:8.0.22
-    platform: linux/x86_64
+    image: arm64v8/mysql:oracle
+    platform: linux/arm64/v8
     container_name: mysqldb
     restart: always
     ports:
