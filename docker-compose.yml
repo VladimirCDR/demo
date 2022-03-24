@@ -4,7 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: backend-server:latest
+    image: vladimirsmartx/demo-app:latest
+    container_name: java_server
     ports:
       - 8080:8080
     depends_on:

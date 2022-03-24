@@ -6,7 +6,7 @@ spring:
     hibernate:
       ddl-auto: validate
   datasource:
-    url: jdbc:mysql://mysqldb:3306/DATA
+    url: jdbc:mysql://mysqldb:3306/DATA?createDatabaseIfNotExist=true
     username: root
     password: p4ssw0rd
   jackson:
