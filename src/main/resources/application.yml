@@ -6,9 +6,9 @@ spring:
     hibernate:
       ddl-auto: validate
   datasource:
-    url: jdbc:mysql://mysqldb:3306/DATA?createDatabaseIfNotExist=true
+    url: jdbc:mysql://mysqldb:3306/DATA
     username: root
-    password: p4ssw0rd
+    password: test
   jackson:
     serialization:
       indent_output: true
