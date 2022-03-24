@@ -1,4 +1,4 @@
 #this datasource configuration will only work with a running(local) Docker mysql container started with "...-p 33061:3306"
-spring:
-  datasource:
-    url: jdbc:mysql://localhost:33061/DATA?createDatabaseIfNotExist=true
+#spring:
+#  datasource:
+#    url: jdbc:mysql://localhost:33061/DATA?createDatabaseIfNotExist=true
