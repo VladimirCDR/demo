@@ -10,6 +10,7 @@ class ExampleApplicationTests {
     @Test
     public void test() {
 
-
+        System.out.println(("Test"));
     }
+
 }

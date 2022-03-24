@@ -8,7 +8,7 @@ spring:
   datasource:
     url: jdbc:mysql://mysqldb:3306/DATA
     username: root
-    password: test
+    password: p4ssw0rd
   jackson:
     serialization:
       indent_output: true
