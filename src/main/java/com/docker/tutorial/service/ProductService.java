@@ -15,6 +15,6 @@ public class ProductService {
 
 
     public List<Product> getAll() {
-        return (List<Product>) repository.findAll();
+        return repository.findAll();
     }
 }
