@@ -1,4 +1,4 @@
-CREATE TABLE product (
+CREATE TABLE products (
     id BINARY(100) primary key,
-    price  BIGINT(19) UNSIGNED
+    price  DECIMAL (19) UNSIGNED
 );

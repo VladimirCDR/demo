@@ -12,7 +12,7 @@ services:
       mysql:
         condition: service_healthy
     networks:
-      - spring-cloud-network
+      - java-mysql-network
 
   mysql:
     image: arm64v8/mysql:oracle
@@ -26,11 +26,11 @@ services:
       - MYSQL_DATABASE=DATA
     healthcheck:
       test: [ "CMD", "mysqladmin" ,"ping", "-h", "localhost" ]
-      timeout: 15s
+      timeout: 10s
       retries: 10
     networks:
-      - spring-cloud-network
+      - java-mysql-network
 
 networks:
-  spring-cloud-network:
+  java-mysql-network:
     driver: bridge
