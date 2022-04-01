@@ -25,9 +25,6 @@ jobs:
     - name: Build with Maven
       run: mvn -B clean install --file pom.xml
 
-  build-and-push-docker-image-to-docker-registry:
-    runs-on: ubuntu-latest
-    steps:
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
@@ -37,21 +34,3 @@ jobs:
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-
-  build-and-push-docker-image-to-amazon-ecr:
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
-      - uses: docker://ghcr.io/kciter/aws-ecr-action:latest
-        with:
-          access_key_id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          account_id: ${{ secrets.AWS_ACCOUNT_ID }}
-          repo: 896367768969.dkr.ecr.us-east-1.amazonaws.com/my-app
-          region: ap-northeast-2
-          tags: latest,${{ github.sha }}
-          create_repo: true
-          image_scanning_configuration: true
-          set_repo_policy: true
-          repo_policy_file: repo-policy.json
