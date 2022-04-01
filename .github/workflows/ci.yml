@@ -43,8 +43,9 @@ jobs:
         secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         account_id: ${{ secrets.AWS_ACCOUNT_ID }}
         region: us-east-1
+        dockerfile: Dockerfile
         tags: latest
-        repo: 896367768969.dkr.ecr.us-east-1.amazonaws.com/my-app:latest
+        repo: 896367768969.dkr.ecr.us-east-1.amazonaws.com/my-app
         create_repo: true
         image_scanning_configuration: true
         set_repo_policy: true
