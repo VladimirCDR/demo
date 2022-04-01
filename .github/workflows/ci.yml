@@ -44,6 +44,7 @@ jobs:
         account_id: ${{ secrets.AWS_ACCOUNT_ID }}
         region: eu-south-1
         tags: latest,${{ github.sha }}
+        repo: 896367768969.dkr.ecr.us-east-1.amazonaws.com/my-app
         create_repo: true
         image_scanning_configuration: true
         set_repo_policy: true
