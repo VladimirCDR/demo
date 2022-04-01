@@ -14,3 +14,5 @@ spring:
       indent_output: true
   flyway:
     locations: classpath:db/migration
+  main:
+    banner-mode: off

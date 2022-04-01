@@ -2,6 +2,7 @@ package com.docker.tutorial;
 
 import lombok.AllArgsConstructor;
 import org.junit.jupiter.api.Test;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.Arrays;
 
@@ -22,6 +23,12 @@ class ExampleApplicationTests {
         var getTotalNumberOfLettersOfNamesLongerThanFive = getTotalNumberOfLettersOfNamesLongerThanFive("Alexandru", "Alexandru");
 
         System.out.println(getTotalNumberOfLettersOfNamesLongerThanFive);
+    }
+
+    @Test
+    public void testBcrypt() {
+        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+        System.out.println(encoder.encode("pass"));
     }
 
 
