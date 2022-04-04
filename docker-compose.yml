@@ -4,8 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: vladimirsmartx/demo-app:latest
-    container_name: java_server
+    image: vladimirsmartx/api_gateway:latest
+    container_name: java_api_gateway_server
     ports:
       - 8080:8080
     depends_on:

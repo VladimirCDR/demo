@@ -29,7 +29,7 @@ jobs:
     - name: Build & push Docker image
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
-        image: vladimirsmartx/demo-app
+        image: vladimirsmartx/api-gateway
         tags: latest
         registry: docker.io
         dockerfile: Dockerfile
@@ -52,7 +52,7 @@ jobs:
       env:
         ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
         ECR_REPOSITORY: test
-        IMAGE_TAG: ${{ github.sha }}
+        IMAGE_TAG: api-gateway-${{ github.sha }}
       run: |
         docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
